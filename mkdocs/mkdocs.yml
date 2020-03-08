@@ -1,0 +1,63 @@
+site_name: Dicas da Django
+site_description: Algumas dicas úteis de Django e Django Rest
+site_url: https://github.com/DarknessRdg/django-rest-tutorial
+edit_uri: docs/
+
+site_author: https://darknessrdg.github.io/
+
+site_dir: ../docs/
+
+# Page tree
+nav:
+  - Home: index.md
+  - Imagens: imagem.md
+
+# Repository
+repo_name: DarknessRdg/django-rest-tutorial
+repo_url: https://github.com/DarknessRdg/django-rest-tutorial
+
+# Configuration
+theme:
+  name: material
+  palette:
+    primary: teal
+    accent: green
+  logo:
+    icon: code
+
+# Customization
+extra:
+  social:
+    - type: user
+      link: https://darknessrdg.github.io/
+    - type: github
+      link: https://github.com/DarknessRdg
+    - type: instagram
+      link: https://www.instagram.com/luan_26/
+    - type: facebook
+      link: https://www.facebook.com/luan.dasilva.925
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
