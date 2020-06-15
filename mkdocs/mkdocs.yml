@@ -10,7 +10,8 @@ site_dir: ../docs/
 # Page tree
 nav:
   - Home: index.md
-  - Imagens: imagem.md
+  - Configurar ambiente django para usar imagens: imagem.md
+  - Mover django model de um app para outro: move_model_to_another.md
 
 # Repository
 repo_name: DarknessRdg/django-rest-tutorial
@@ -20,21 +21,23 @@ repo_url: https://github.com/DarknessRdg/django-rest-tutorial
 theme:
   name: material
   palette:
-    primary: teal
-    accent: green
-  logo:
-    icon: code
+    primary: indigo
+    accent: light blue
+  icon:
+    logo: fontawesome/solid/code
+  features:
+    - instant
 
 # Customization
 extra:
   social:
-    - type: user
+    - icon: fontawesome/solid/user
       link: https://darknessrdg.github.io/
-    - type: github
+    - icon: fontawesome/brands/github-alt
       link: https://github.com/DarknessRdg
-    - type: instagram
+    - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/luan_26/
-    - type: facebook
+    - icon: fontawesome/brands/facebook
       link: https://www.facebook.com/luan.dasilva.925
 
 # Extensions
