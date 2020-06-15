@@ -11,7 +11,7 @@
         <meta name="description" content="Algumas dicas úteis de Django e Django Rest">
       
       
-        <link rel="canonical" href="https://github.com/DarknessRdg/django-rest-tutorial/imagem/">
+        <link rel="canonical" href="https://github.com/DarknessRdg/django-rest-tutorial/move_model_to_another/">
       
       
         <meta name="author" content="https://darknessrdg.github.io/">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Configurar ambiente django para usar imagens - Dicas da Django</title>
+        <title>Mover django model de um app para outro - Dicas da Django</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#imagens-com-django-e-django-rest-framework" class="md-skip">
+        <a href="#mover-django-model-de-um-app-para-outro" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Configurar ambiente django para usar imagens
+              Mover django model de um app para outro
             
           </span>
         </div>
@@ -202,6 +202,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../imagem/" title="Configurar ambiente django para usar imagens" class="md-nav__link">
+      Configurar ambiente django para usar imagens
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -213,14 +225,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Configurar ambiente django para usar imagens
+        Mover django model de um app para outro
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="Configurar ambiente django para usar imagens" class="md-nav__link md-nav__link--active">
-      Configurar ambiente django para usar imagens
+    <a href="./" title="Mover django model de um app para outro" class="md-nav__link md-nav__link--active">
+      Mover django model de um app para outro
     </a>
     
       
@@ -239,31 +251,64 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#imagens-com-django" class="md-nav__link">
-    Imagens com Django
+  <a href="#estrutura-do-projeto" class="md-nav__link">
+    Estrutura do projeto
   </a>
   
-    <nav class="md-nav" aria-label="Imagens com Django">
+    <nav class="md-nav" aria-label="Estrutura do projeto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#settingspy" class="md-nav__link">
-    Settings.py
+  <a href="#o-arquivo-modelspy" class="md-nav__link">
+    O arquivo models.py
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerando-os-migrations" class="md-nav__link">
+    Gerando os migrations
+  </a>
+  
+    <nav class="md-nav" aria-label="Gerando os migrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desvincular-o-model" class="md-nav__link">
+    Desvincular o model
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#urlspy" class="md-nav__link">
-    Urls.py
+  <a href="#criar-model-da-outra-aplicacao" class="md-nav__link">
+    Criar model da outra aplicação
+  </a>
+  
+    <nav class="md-nav" aria-label="Criar model da outra aplicação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cria-classe-do-model" class="md-nav__link">
+    1 - Cria classe do Model
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#modelspy" class="md-nav__link">
-    Models.py
+  <a href="#2-gerar-novos-migrations" class="md-nav__link">
+    2 - Gerar novos migrations
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -276,18 +321,6 @@
   
 </nav>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../move_model_to_another/" title="Mover django model de um app para outro" class="md-nav__link">
-      Mover django model de um app para outro
-    </a>
   </li>
 
     
@@ -317,31 +350,64 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#imagens-com-django" class="md-nav__link">
-    Imagens com Django
+  <a href="#estrutura-do-projeto" class="md-nav__link">
+    Estrutura do projeto
   </a>
   
-    <nav class="md-nav" aria-label="Imagens com Django">
+    <nav class="md-nav" aria-label="Estrutura do projeto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#settingspy" class="md-nav__link">
-    Settings.py
+  <a href="#o-arquivo-modelspy" class="md-nav__link">
+    O arquivo models.py
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gerando-os-migrations" class="md-nav__link">
+    Gerando os migrations
+  </a>
+  
+    <nav class="md-nav" aria-label="Gerando os migrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desvincular-o-model" class="md-nav__link">
+    Desvincular o model
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#urlspy" class="md-nav__link">
-    Urls.py
+  <a href="#criar-model-da-outra-aplicacao" class="md-nav__link">
+    Criar model da outra aplicação
+  </a>
+  
+    <nav class="md-nav" aria-label="Criar model da outra aplicação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cria-classe-do-model" class="md-nav__link">
+    1 - Cria classe do Model
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#modelspy" class="md-nav__link">
-    Models.py
+  <a href="#2-gerar-novos-migrations" class="md-nav__link">
+    2 - Gerar novos migrations
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -362,7 +428,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/DarknessRdg/django-rest-tutorial/docs/imagem.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/DarknessRdg/django-rest-tutorial/docs/move_model_to_another.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -370,120 +436,193 @@
                   
                 
                 
-                <h1 id="imagens-com-django-e-django-rest-framework">Imagens com Django e Django Rest Framework<a class="headerlink" href="#imagens-com-django-e-django-rest-framework" title="Permanent link">&para;</a></h1>
-<p>Ajustes para usar corretamento imagem com Django e o Django Rest Framework</p>
-<h2 id="imagens-com-django">Imagens com Django<a class="headerlink" href="#imagens-com-django" title="Permanent link">&para;</a></h2>
-<p>Antes de tudo é preciso fazer alguns ajuses na aplicação para utilizar as 
-imagens da maneira correta com o django.</p>
-<ol>
-<li>Adicionar <code>MEDIA_URL</code> e <code>MEDIA_ROOT</code> no arquivo <strong>settings.py</strong></li>
-<li>Adicionar <code>MEDIA_URL</code> e <code>MEDIA_ROOT</code> nas urlpatterns do arquivo <strong>urls.py</strong> do project.</li>
-</ol>
-<h3 id="settingspy">Settings.py<a class="headerlink" href="#settingspy" title="Permanent link">&para;</a></h3>
-<p>Adicione as seguinte variáveis de configuração no seu settings:</p>
-<div class="highlight"><pre><span></span><code><span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s1">&#39;/pasta_para_guardar_arquivos/&#39;</span>
-<span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;pasta_para_guardar_arquivos&#39;</span><span class="p">)</span>
-</code></pre></div>
-
+                <h1 id="mover-django-model-de-um-app-para-outro">Mover django model de um app para outro<a class="headerlink" href="#mover-django-model-de-um-app-para-outro" title="Permanent link">&para;</a></h1>
+<p>Mover uma classe de um dos seus models de um <code>django app</code> para outro <code>django app</code> não é uma tarefa trivial. Você terá que modificar os arquivos gerados pelo comando <code>python3 manage.py makemigrations</code>. Tendo em vista, decidi salvar aqui um breve tutorial com o passo a passo pra fazer isso.</p>
+<h3 id="estrutura-do-projeto">Estrutura do projeto<a class="headerlink" href="#estrutura-do-projeto" title="Permanent link">&para;</a></h3>
+<p>Aqui abaixo está a estutura de diretório do projeto.</p>
 <ul>
-<li><strong>MEDIA_URL</strong>: nome da pasta onde será guardada as imagens, os vídeos e os arquivos
-que forem feito upload para o repositório.</li>
-<li><strong>MEDIA_ROOT</strong>: caminho absoluto para a pasta MEDIA_URL</li>
+<li><code>congif/</code><ul>
+<li>settings.py</li>
+<li>wsgi.py</li>
 </ul>
-<p>O seu repositório ficará com a seguinte estrutura</p>
-<div class="highlight"><pre><span></span><code><span class="err">-</span> <span class="err">repositorio</span>
+</li>
+<li><code>core_application/</code><ul>
+<li><code>migrations/</code><ul>
+<li><strong>0001_initial.py</strong></li>
+</ul>
+</li>
+<li>admin.py</li>
+<li>app.py</li>
+<li><strong>models.py</strong></li>
+<li>tests.py</li>
+<li>views.py</li>
+</ul>
+</li>
+</ul>
+<p>Preste atenção aos dois arquivos em destaque. Temos o migrations inicial do app <em>core_aplication</em> e o arquivo com os models ORM.</p>
+<h4 id="o-arquivo-modelspy">O arquivo models.py<a class="headerlink" href="#o-arquivo-modelspy" title="Permanent link">&para;</a></h4>
+<p>Veja o arquivo <code>models.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># models.py</span>
 
-    <span class="err">-</span> <span class="err">projeto</span>
-        <span class="err">-</span> <span class="err">settings.py</span>
-        <span class="err">...</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 
-    <span class="err">-</span> <span class="err">app</span>
-        <span class="err">-</span> <span class="err">models.py</span>
-        <span class="err">...</span>
 
-    <span class="err">-</span> <span class="err">pasta_para_guardar_arquivos</span>
-        <span class="err">...</span>
+<span class="k">class</span> <span class="nc">Domain</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-    <span class="err">-</span> <span class="err">manage.py</span>
+
+<span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
 </code></pre></div>
 
-<p>Onde <code>pasta_para_guardar_arquivos</code> será o diretório para armazenar todos os arquivos que forem
-feito upload.</p>
-<h3 id="urlspy">Urls.py<a class="headerlink" href="#urlspy" title="Permanent link">&para;</a></h3>
-<p>Concatene com a lista o seguintes comando:</p>
-<p><code>static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)</code></p>
-<p>Veja:
-<div class="highlight"><pre><span></span><code><span class="c1"># importa funcao static do django</span>
-<span class="kn">from</span> <span class="nn">django.conf.urls.static</span> <span class="kn">import</span> <span class="n">static</span>  
+<p>Temos dois models: <code>Domain</code>, e <code>Person</code>. Dicidimos um dia que eles deve ser separados, cada em um sua aplição, e para isso criaremos uma nova aplicação: <code>accounts</code> com o camnando <code>python3 manage.py startapp accounts</code></p>
+<ul>
+<li><code>congif/</code><ul>
+<li>settings.py</li>
+<li>wsgi.py</li>
+</ul>
+</li>
+<li><code>core_application/</code><ul>
+<li><code>migrations/</code><ul>
+<li>0001_initial.py</li>
+</ul>
+</li>
+<li>admin.py</li>
+<li>app.py</li>
+<li>models.py</li>
+<li>tests.py</li>
+<li>views.py</li>
+</ul>
+</li>
+<li>
+<p><code>accounts/</code></p>
+<ul>
+<li>
+<p><code>migrations/</code></p>
+</li>
+<li>
+<p>admin.py</p>
+</li>
+<li>app.py</li>
+<li>models.py</li>
+<li>tests.py</li>
+<li>views.py</li>
+</ul>
+</li>
+</ul>
+<h3 id="gerando-os-migrations">Gerando os migrations<a class="headerlink" href="#gerando-os-migrations" title="Permanent link">&para;</a></h3>
+<p>O objetivo é mover o model <code>Person</code> para a aplicação <code>accounts</code>, dessa forma <code>core_aplication.Person --&gt; accounts.Person</code>.</p>
+<p>Primeiro criaremos um migration no app <code>core_aplication</code> para desvincular nosso model.</p>
+<ul>
+<li><code>core_application/</code><ul>
+<li><code>migrations/</code><ul>
+<li>0001_initial.py</li>
+<li>0002_untrack_model_person.py</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Pronto, criamos um arquivo de migrations onde podermos editar manualmente para criar uma estratégia para desvincular os models.</p>
+<h4 id="desvincular-o-model">Desvincular o model<a class="headerlink" href="#desvincular-o-model" title="Permanent link">&para;</a></h4>
+<p>Veja como como deveremos fazer isso</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 0002_untrack_model_person.py</span>
 
-<span class="c1"># importa as variaveis do arquivo settings.py</span>
-<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>  
-
-<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">views</span><span class="p">),</span>
-
-<span class="p">]</span> <span class="o">+</span> <span class="n">static</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_URL</span><span class="p">,</span> <span class="n">document_root</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_ROOT</span><span class="p">)</span>
-<span class="c1"># concatena as rotas para acessar as imagens no servidor</span>
-</code></pre></div></p>
-<h3 id="modelspy">Models.py<a class="headerlink" href="#modelspy" title="Permanent link">&para;</a></h3>
-<p>Adicionar campo de imagem ao Model</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">migrations</span>
 
 
-<span class="k">class</span> <span class="nc">ModelComImagem</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">imagem</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ImageField</span><span class="p">(</span><span class="n">upload_to</span><span class="o">=</span><span class="s1">&#39;pasta_das_imagens/&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Migration</span><span class="p">(</span><span class="n">migrations</span><span class="o">.</span><span class="n">Migration</span><span class="p">):</span>
+
+    <span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;core_aplications&#39;</span><span class="p">,</span> <span class="s1">&#39;0001_initial&#39;</span><span class="p">),</span>
+    <span class="p">]</span>
+
+    <span class="n">database_operations</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">AlterModelTable</span><span class="p">(</span><span class="s1">&#39;Person&#39;</span><span class="p">,</span> <span class="s1">&#39;accounts_person&#39;</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="n">state_operations</span> <span class="o">=</span> <span class="p">[</span><span class="n">migrations</span><span class="o">.</span><span class="n">DeleteModel</span><span class="p">(</span><span class="s1">&#39;Person&#39;</span><span class="p">)]</span>
+
+    <span class="n">operations</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="n">migrations</span><span class="o">.</span><span class="n">SeparateDatabaseAndState</span><span class="p">(</span>
+        <span class="n">database_operations</span><span class="o">=</span><span class="n">database_operations</span><span class="p">,</span>
+        <span class="n">state_operations</span><span class="o">=</span><span class="n">state_operations</span><span class="p">)</span>
+    <span class="p">]</span>
 </code></pre></div>
 
-<p>o atributo <code>upload_to</code> recebe como parâmetro uma string com o nome da pasta de destino. Esta pasta será
-localizada dentro da pasta <code>MEDIA_URL</code> configurada nos <a href="#settingspy">settings.py</a>. </p>
-<p>Ao salvar uma imagem você terá o seguinte diretório:</p>
-<div class="highlight"><pre><span></span><code><span class="err">-</span> <span class="err">repositorio</span>
+<p>O codigo acima renomeia o nome da tabela do model <code>Person</code>, porém essa renoação é feita a nivel de banco de dados, não altera o nome da tabela no código o ORM. Em segida é deletada a tabela do model <code>Person</code>, que tentará deletar uma tabela com o nome que não existe mais, o nome antigo, visto que a tabela foi renomeada, porém o codigo ainda possui o nome da tebala antiga.</p>
+<h4 id="criar-model-da-outra-aplicacao">Criar model da outra aplicação<a class="headerlink" href="#criar-model-da-outra-aplicacao" title="Permanent link">&para;</a></h4>
+<p>Agora criaremos o model na nova aplição.</p>
+<h5 id="1-cria-classe-do-model">1 - Cria classe do Model<a class="headerlink" href="#1-cria-classe-do-model" title="Permanent link">&para;</a></h5>
+<p>No arquivo copie e cole o arquivo do <code>models.py</code> da aplicação que estamos vendo, para a nova aplição.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># core_application.models.py</span>
 
-    <span class="err">-</span> <span class="err">projeto</span>
-        <span class="err">-</span> <span class="err">settings.py</span>
-        <span class="err">...</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 
-    <span class="err">-</span> <span class="err">app</span>
-        <span class="err">-</span> <span class="err">models.py</span>
-        <span class="err">...</span>
 
-    <span class="err">-</span> <span class="err">pasta_para_guardar_arquivos</span>
-        <span class="err">-</span> <span class="err">pasta_das_imagens</span>
-            <span class="err">-</span> <span class="err">imagem</span><span class="mi">1</span><span class="err">.jpg</span>
-        <span class="err">...</span>
-
-    <span class="err">-</span> <span class="err">manage.py</span>
+<span class="k">class</span> <span class="nc">Domain</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 
-<p>Já que a string será concatenada com a <code>MEDIA_URL</code>, é possível criar subdiretórios para <code>upload_to</code>.
-Por exemplo, imagine que sejam imagens de perfil do usuário, você pode fazer da seguinte forma:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># accounts.models.py</span>
+
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 
 
-<span class="k">class</span> <span class="nc">ModelComImagem</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">imagem</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ImageField</span><span class="p">(</span><span class="n">upload_to</span><span class="o">=</span><span class="s1">&#39;perfil/pasta_das_imagens/&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
 </code></pre></div>
 
-<p>Agora, ao salvar você terá o seguinte diretório:</p>
-<div class="highlight"><pre><span></span><code><span class="err">-</span> <span class="err">repositorio</span>
-
-    <span class="err">-</span> <span class="err">projeto</span>
-        <span class="err">-</span> <span class="err">settings.py</span>
-        <span class="err">...</span>
-
-    <span class="err">-</span> <span class="err">app</span>
-        <span class="err">-</span> <span class="err">models.py</span>
-        <span class="err">...</span>
-
-    <span class="err">-</span> <span class="err">pasta_para_guardar_arquivos</span>
-        <span class="err">-</span> <span class="err">perfil</span>
-            <span class="err">-</span> <span class="err">pasta_das_imagens</span>
-                <span class="err">-</span> <span class="err">imagem</span><span class="mi">1</span><span class="err">.jpg</span>
-                <span class="err">...</span>
-        <span class="err">...</span>
-
-    <span class="err">-</span> <span class="err">manage.py</span>
+<h5 id="2-gerar-novos-migrations">2 - Gerar novos migrations<a class="headerlink" href="#2-gerar-novos-migrations" title="Permanent link">&para;</a></h5>
+<p>Execute o comando de makemigrations para o novo model:</p>
+<div class="highlight"><pre><span></span><code>python3 manage.py makemigrations accounts
 </code></pre></div>
+
+<p>Em seguida edite o novo arquivo de migration gerado e adicione as dependencias corretamente, e altere o atributo de operations, veja abaixo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Migration</span><span class="p">(</span><span class="n">migrations</span><span class="o">.</span><span class="n">Migration</span><span class="p">):</span>
+
+    <span class="n">initial</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># .... outras dependencias</span>
+
+        <span class="c1"># adicione a dependencia da migration que criamos anteriormente</span>
+        <span class="c1"># no app core_aplication</span>
+        <span class="p">(</span><span class="s1">&#39;core_aplication&#39;</span><span class="p">,</span> <span class="s1">&#39;0002_untrack_model_person&#39;</span><span class="p">)</span>
+    <span class="p">]</span>
+
+    <span class="n">state_operations</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># renomeio `operaionst para `state_operations`</span>
+
+        <span class="c1"># oprations de Create gerado pelo</span>
+        <span class="c1"># comando makemigrations accounts</span>
+        <span class="c1"># com os campos do model, ou caso preferir,</span>
+        <span class="c1"># que você tenha escrito.</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">CreateModel</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Person&#39;</span><span class="p">,</span>
+            <span class="n">fields</span><span class="o">=</span><span class="p">[</span>
+                <span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span><span class="n">auto_created</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">serialize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;ID&#39;</span><span class="p">)),</span>
+                <span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)),</span>
+            <span class="p">],</span>
+            <span class="n">options</span><span class="o">=</span><span class="p">{</span>
+                <span class="s1">&#39;db_table&#39;</span><span class="p">:</span> <span class="s1">&#39;accounts_person&#39;</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">),</span>
+    <span class="p">]</span>
+
+    <span class="c1"># alterere o atributo `operations` para utilizar o SeparateDatabaseAndState()</span>
+    <span class="c1"># e passe como argumento o state_operations, onde criamos o model</span>
+    <span class="n">operations</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">migrations</span><span class="o">.</span><span class="n">SeparateDatabaseAndState</span><span class="p">(</span>
+            <span class="n">state_operations</span><span class="o">=</span><span class="n">state_operations</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+</code></pre></div>
+
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Model movido com sucesso!</li>
+</ul>
                 
               
               
@@ -502,7 +641,7 @@ Por exemplo, imagine que sejam imagens de perfil do usuário, você pode fazer d
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href=".." title="Home" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../imagem/" title="Configurar ambiente django para usar imagens" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -511,25 +650,11 @@ Por exemplo, imagine que sejam imagens de perfil do usuário, você pode fazer d
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Configurar ambiente django para usar imagens
               </div>
             </div>
           </a>
         
-        
-          <a href="../move_model_to_another/" title="Mover django model de um app para outro" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Mover django model de um app para outro
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
         
       </nav>
     </div>
