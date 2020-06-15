@@ -20,6 +20,7 @@ repo_url: https://github.com/DarknessRdg/django-rest-tutorial
 # Configuration
 theme:
   name: material
+  favicon: img/favicon.ico
   palette:
     primary: indigo
     accent: light blue
