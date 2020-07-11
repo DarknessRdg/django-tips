@@ -6,6 +6,12 @@ Enjoy ! :wink:
 
 Escolha uma dica abaixo:
 
+**Django**
+
 - [Configurar ambiente django para usar imagens](imagem.md)
 - [Mover django model de um app para outro](move_model_to_another.md)
+
+**Django rest**
+
+- [UrlField com vários lookups](url_field_many_lookups.md)
 

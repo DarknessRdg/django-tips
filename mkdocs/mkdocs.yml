@@ -10,8 +10,11 @@ site_dir: ../docs/
 # Page tree
 nav:
   - Home: index.md
-  - Configurar ambiente django para usar imagens: imagem.md
-  - Mover django model de um app para outro: move_model_to_another.md
+  - Django:
+    - Configurar ambiente django para usar imagens: imagem.md
+    - Mover django model de um app para outro: move_model_to_another.md
+  - DRF:
+    - UrlField com vários lookups: url_field_many_lookups.md
 
 # Repository
 repo_name: DarknessRdg/django-rest-tutorial
