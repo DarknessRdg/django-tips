@@ -26,6 +26,8 @@ from .viws import MyView
 url = 'api/school/<int:id_school>/teacher/<int:id_teacher>/class/<int:id_class>/students/'
 
 urlpatterns = [
+    path('', HomeView.as_view(), name='home'),
+    path('login/', LoginView.as_view(), name='login'),
     path(url, MyView.as_view(), name='students-view')
 ]
 ```
@@ -40,6 +42,9 @@ A URL acima tem os seguintes lookups keys:
 ## Criando nosso Field
 
 Agora criaremos um Field dos customoizado do Django Rest que receberá a instância do model e irá chamar um método para criar os lookups da URL.
+
+
+#### Reverse de uma URL com vários lookups
 
 ```py
 # serializers.py
@@ -69,7 +74,7 @@ class UrlPatternsField(serializers.HyperlinkedIdentityField):
         return reverse(view_name, request=request, kwargs=kwargs, format=format)
 ```
 
-Pronto, field criado, agora devemos implementa no nosso serializer.
+Pronto, field criado, agora devemos implementar no nosso serializer.
 
 ```py
 # serializers.py
@@ -92,4 +97,24 @@ class ClassSerializer(serializer.ModelSerializer):
             'id_teacher': obj.teacher.id,
             'id_class': obj.id
         }
+```
+
+
+#### Reverse de uma URL sem lookup
+
+Muito simple, não implementamos o método que retorna os lookups ou retornamos um dicionário vazio.
+
+```py
+# serializers.py
+
+
+class EntryPointSerializer(serializer.ModelSerializer):
+    login = UrlPatternsField(view_name='login')
+    # a url nao precisa de lookups, portanto nao implementamos o metodos
+    home = UrlPatternsField(view_name='home')
+    # a url nao precisa de lookups, portanto nao implementamos o metodos
+
+    class Meta:
+        model = EntryModel
+        fields = '__all__'
 ```
