@@ -15,6 +15,7 @@ nav:
     - Mover django model de um app para outro: move_model_to_another.md
   - DRF:
     - UrlField com vários lookups: url_field_many_lookups.md
+    - Extra asserts para API testes: api_asserts.md
 
 # Repository
 repo_name: DarknessRdg/django-rest-tutorial

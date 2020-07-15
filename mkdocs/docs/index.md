@@ -14,4 +14,4 @@ Escolha uma dica abaixo:
 **Django rest**
 
 - [UrlField com vários lookups](url_field_many_lookups.md)
-
+- [Extra asserts para API testes](api_asserts.md)
