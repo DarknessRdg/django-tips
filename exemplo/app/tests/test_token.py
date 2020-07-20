@@ -1,6 +1,10 @@
+from rest_framework_simplejwt.utils import datetime_from_epoch
+
 from .api_test_case import APITestCase
 from django.urls import reverse
-from app.tokens import TokenDoisDiasSerializer
+from rest_framework_simplejwt import settings
+from app.tokens import TokenDoisDiasAccess, TokenDoisDiasSerializer
+import datetime
 
 
 class TestTokenWithDifferentDuration(APITestCase):
@@ -30,3 +34,12 @@ class TestTokenWithDifferentDuration(APITestCase):
         auth_endpoint = reverse('user-list')
         response = self.client.get(auth_endpoint, HTTP_AUTHORIZATION=f'JWT {token}')
         self.assertSuccess(response)
+
+    def test_time(self):
+        token = TokenDoisDiasAccess.for_user(self.user)
+
+        token_duration = datetime_from_epoch(token['exp'])
+        today = datetime.datetime.now()
+
+        limit_day = today.day + 3
+        self.assertEqual(limit_day, token_duration.day)
