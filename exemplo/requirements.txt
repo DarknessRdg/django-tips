@@ -4,6 +4,6 @@ djangorestframework==3.11.0
 djangorestframework-simplejwt==4.4.0
 model-bakery==1.1.0
 Pillow==7.2.0
-PyJWT==1.7.1
+PyJWT==2.4.0
 pytz==2020.1
 sqlparse==0.3.1
